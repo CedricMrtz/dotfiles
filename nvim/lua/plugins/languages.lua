@@ -1,5 +1,4 @@
 return {
-
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
@@ -14,16 +13,15 @@ return {
         "css",
         "json",
         "c",
+        "dart",
       })
     end,
   },
-
   -- Mason (instala herramientas)
   {
     "mason-org/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
-
         -- LSP
         "pyright",
         "rust-analyzer",
@@ -34,7 +32,6 @@ return {
         "css-lsp",
         "clangd",
         "clang-format",
-
         -- Formatters / linters
         "prettier",
         "black",
@@ -42,5 +39,19 @@ return {
         "stylua",
       })
     end,
+  },
+  -- Flutter tools (LSP, debugging, hot reload, widget guides, etc.)
+  {
+    "akinsho/flutter-tools.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim", -- opcional, mejora UI de inputs/selects
+    },
+    opts = {
+      lsp = {
+        color = { enabled = true }, -- resalta colores en el código
+      },
+    },
   },
 }

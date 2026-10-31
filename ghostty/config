@@ -4,7 +4,7 @@ mouse-hide-while-typing = true
 macos-option-as-alt = true
 
 # ── Window ────────────────────────────────────────────────────────────────────
-window-decoration = none
+# window-decoration = none
 window-padding-x = 12
 window-padding-y = 8
 
